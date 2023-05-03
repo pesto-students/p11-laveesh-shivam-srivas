@@ -1,76 +1,74 @@
-/* Add your styles here */
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-basis: 70%;
-}
-/* Given CSS rules below */
-body {
-  margin: 0;
-  font-family: Helvetica, sans-serif;
+.table {
+  width: 400px;
+  height: 300px;
+  background-image: linear-gradient(forestgreen, darkgreen);
+  /* Part of your solution goes here */
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid #93b5c6;
-  background-color: #ddedaa;
-  padding: 8px;
+.cardRed {
+  color: red;
 }
 
-.logo {
-  color: #bd4f6c;
-  font-size: 18px;
+.cardBlack {
+  color: black;
 }
 
-.content {
-  margin-left: 30px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.title {
-  border-bottom: 1px dashed #93b5c6;
-  display: flex;
-  align-items: baseline;
-}
-
-.title h1 {
-  color: #bd4f6c;
-}
-
-.title p {
-  color: #93b5c6;
-  margin-left: 30px;
-}
-
-.summary {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-grow: 1;
-  flex-basis: 100%;
-}
-
-.summary > div {
-  background-color: #ddedaa;
-  border: 2px solid #93b5c6;
+.card {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  width: 100px;
+  height: 160px;
+  line-height: 160px;
+  text-align: center;
+  font-size: 80px;
   border-radius: 5px;
-  color: #bd4f6c;
-  padding: 5px;
-  width: 210px;
-  display: flex;
-  justify-content: space-between;
+  box-shadow: black 3px;
+  offset: x, y;
+
+  /* Part of your solution goes here */
 }
 
-.related-content {
-  margin-left: 100px;
-  flex-grow: 1;
-  flex-basis: 20%;
+.cardTop {
+  position: absolute;
+  left: 150px;
+  top: 100px;
+  z-index: auto;
 }
 
-.ingredients ~ .directions {
-  flex-grow: 1;
-  flex-basis: 45%;
+.cardBottom {
+  position: absolute;
+  left: 240px;
+  top: 120px;
+  z-index: inherit;
+  /* Part of your solution goes here */
+}
+
+.heart {
+  color: red;
+  font-size: 28px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.spade {
+  color: black;
+  font-size: 36px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.topLeft {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  /* Part of your solution goes here */
+}
+
+.bottomRight {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  /* Part of your solution goes here */
 }
