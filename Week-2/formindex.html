@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<style>
+
+    .form{
+justify-content: space-between;
+    }
+.form-group {
+    display: flex;
+
+  align-items: center;
+  
+}
+.form-group label {
+  width: 120px;
+    display: inline-block;
+    justify-content: space-evenly;
+
+}
+.form-group textarea , .form-group input {
+    padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+}
+.form-group input[type="file"] {
+  padding: 0.25rem;
+}
+</style>
+
+
+<h1> Join a social network</h1>
+<form method="POST" action="http://example.com/upload" enctype="multipart/form-data">
+    
+    <div class="form-group">
+  <label for="name">Name:</label>
+  <input type="text" id="fullName" name="name" required>
+    </div>
+
+   <div  class="form-group"> 
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required>
+  </div>
+  
+  <div  class="form-group">
+  <label for="about">About You:</label>
+  <textarea id="about" rows="3" cols="50" name="about" required></textarea>
+  </div>
+
+  <div  class="form-group">
+  <label for="photo">Photo:</label>
+  <input type="file" id="photo" name="picture" accept="image/*">
+
+  </div>
+
+  <div  class="form-group">
+  <input type="submit" value="Submit">
+  </div>
+
+
+</form>
+
+
+</html>
