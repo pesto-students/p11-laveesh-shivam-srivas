@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <ul
+    <!-- <ul
       class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm"
       id="pillNav2"
       role="tablist"
@@ -58,7 +58,7 @@
           Contact
         </button>
       </li>
-    </ul>
+    </ul> -->
     <header>
       <h1>Mediterranian Vacations</h1>
     </header>
@@ -67,6 +67,7 @@
 
       <!-- TODO: Add srcset attribute -->
       <img
+        srcset="egypt_600.jpg 1x, egypt_1200.jpg 2x, egypt_1800.jpg 3x"
         src="egypt_600.jpg"
         alt="Great Sphyinx and pyramid"
         class="stretch-image"
@@ -80,7 +81,14 @@
       </p>
 
       <!-- TODO: Add srcset and sizes attributes -->
-      <img src="luxor_600.jpg" alt="Luxor Temple" />
+      <img
+        src="luxor_600.jpg"
+        srcset="luxor_600.jpg 600w, luxor_800.jpg 800w, luxor_1200.jpg 1200w"
+        sizes="(max-width: 500px) 400px,
+      (max-width: 700px) 600px,
+      200px"
+        alt="Luxor Temple"
+      />
 
       <p>Packages include airfare, lodging, and several guided tours!</p>
       <ul>
@@ -105,7 +113,10 @@
       </ul>
 
       <!-- TODO: Add <picture> -->
-      <img src="hotel_narrow.jpg" alt="Hotel" class="stretch-image" />
+      <picture>
+        <source media="(min-width: 500px)" srcset="hotel_wide.jpg" />
+        <img src="hotel_narrow.jpg" alt="Hotel" class="stretch-image" />
+      </picture>
     </main>
     <footer>
       <p>
