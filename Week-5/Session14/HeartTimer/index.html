@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heart Animation</title>
+    <style>
+      #heart {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: top 0.1s, left 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="heart" src="heart.png" />
+
+    <script>
+      let imgX, imgY;
+      let centerX, centerY;
+      let timerId;
+
+      function startAnimation() {
+        if (timerId !== null) {
+          clearInterval(timerId);
+        }
+
+        const heart = document.getElementById("heart");
+        const rect = heart.getBoundingClientRect();
+        centerX = rect.left + rect.width / 2;
+        centerY = rect.top + rect.height / 2;
+
+        document.addEventListener("click", (event) => {
+          const clickX = event.clientX;
+          const clickY = event.clientY;
+          moveImage(clickX, clickY);
+        });
+
+        timerId = setInterval(() => {
+          moveImage(clickX, clickY);
+        }, 10);
+      }
+
+      function moveImage(clickX, clickY) {
+        const heart = document.getElementById("heart");
+        const rect = heart.getBoundingClientRect();
+        imgX = rect.left + rect.width / 2;
+        imgY = rect.top + rect.height / 2;
+
+        if (imgX === clickX && imgY === clickY) {
+          clearInterval(timerId);
+          timerId = null;
+        } else {
+          if (imgX < clickX) {
+            imgX++;
+          } else if (imgX > clickX) {
+            imgX--;
+          }
+
+          if (imgY < clickY) {
+            imgY++;
+          } else if (imgY > clickY) {
+            imgY--;
+          }
+
+          heart.style.left = imgX + "px";
+          heart.style.top = imgY + "px";
+        }
+      }
+
+      startAnimation();
+    </script>
+  </body>
+</html>
